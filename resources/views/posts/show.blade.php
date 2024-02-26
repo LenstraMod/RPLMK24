@@ -40,9 +40,11 @@
                                 <button class="edit-cancel font-poppins text-sm bg-red-500 px-3 py-1 rounded-lg my-3 hidden text-white" onclick="cancelEdit()">Cancel</button> <button class="edit-cancel font-poppins text-sm bg-red-500 px-3 py-1 rounded-lg my-3 hidden text-white">cancel</button>
                             </div>
                         </form>
-                        <div class="profile mt-3 flex gap-3 items-center">
-                            <a href="{{ route('profile',$post->user->username) }}"><img src="https://wallpapercave.com/wp/wp5922307.jpg" alt="" class="w-[30px] h-[30px] rounded-full"></a>
-                            <p class="name font-poppins font-semibold">{{ $post->user->username }}</p>
+                        <div class="profile ">
+                            <a href="{{ route('profile',$post->user->username) }}" class="mt-3 flex gap-3 items-center w-fit">
+                                <img src="https://wallpapercave.com/wp/wp5922307.jpg" alt="" class="w-[30px] h-[30px] rounded-full">
+                                <p class="name font-poppins font-semibold">{{ $post->user->username }}</p>
+                            </a>
                         </div>
                         <div class="all-comment mt-3">
                            <h1 class="font-poppins font-semibold text-sm">Comment</h1>
@@ -50,8 +52,8 @@
                                 @foreach($post->comments->sortByDesc('created_at') as $comment)
                                     <div class="user-comment flex justify-between ">
                                         <div class="comment-in flex  gap-2 items-center mb-5">
-                                            <a href="{{ route('profile',$post->user->username) }}"><img src="https://wallpaperaccess.com/full/4595713.jpg" alt="" class="w-[30px] h-[30px] rounded-full"></a>
-                                            <p class="font-poppins text-sm"><span class="font-semibold">{{ $comment->user->username }}</span> {{ $comment->comment }} </p>
+                                            <a href="{{ route('profile',$comment->user->username) }}"><img src="https://wallpaperaccess.com/full/4595713.jpg" alt="" class="w-[30px] h-[30px] rounded-full">
+                                            <p class="font-poppins text-sm"><span class="font-semibold">{{ $comment->user->username }}</span></a> {{ $comment->comment }} </p>
                                         </div>
                                         <div class="set">
                                             <i class="setButton fa-solid fa-ellipsis cursor-pointer" onclick="setCommentSetting(this)"></i>

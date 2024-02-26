@@ -25,10 +25,9 @@
             <button onclick="dropDownProfile()" ><i class="fa-solid fa-sort-down"></i></button>
         </div>
     </div>
-    <div class="profile-drop-down h-[130px] w-[200px] shadow-profile bg-white absolute right-10 top-[65px] rounded-lg hidden" id="dropProfileMenu">
+    <div class="profile-drop-down h-fit w-[200px] shadow-profile bg-white absolute right-10 top-[65px] rounded-lg hidden" id="dropProfileMenu">
         <ul class="font-poppins mx-3 my-3 text-md">
-            <li class="hover:bg-slate-400 py-1 px-2 rounded-lg duration-150 ease-out"><a href="#">Profile</a></li>
-            <li class="hover:bg-slate-400 py-1 px-2 rounded-lg duration-150 ease-out"><a href="#">Setting</a></li>
+            <li class="hover:bg-slate-400 py-1 px-2 rounded-lg duration-150 ease-out"><a href="{{ route('profile',auth()->user()->username) }}">Profile</a></li>
             <li class="hover:bg-slate-400 py-1 px-2 rounded-lg duration-150 ease-out"><a href="{{ route('logout') }}">Log Out</a></li>
         </ul>
     </div>
